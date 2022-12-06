@@ -1,0 +1,66 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "1",
+        "author": "omar",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "refresh_tokens",
+              "columns": [
+                {
+                  "column": {
+                    "name": "identifier",
+                    "type": "varchar(100)",
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+                  },
+                  "column": {
+                    "name": "access_token_id",
+                    "type": " varchar(100)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  },
+                  "column": {
+                    "name": "revoked",
+                    "type": "tinyint(1)",
+                    "constraints": {
+                      "nullable": true
+                    }
+                  },
+                  "column": {
+                    "name": "expires_at",
+                    "type": "datetime",
+                    "constraints": {
+                      "nullable": true
+                    }
+                  }
+                }
+              ]
+            },
+            "createIndex": {
+              "clustered": true,
+              "columns": [
+                {
+                  "column": {
+                    "descending": true,
+                    "name": "access_token_id"
+                  }
+                }
+              ],
+              "indexName": "oauth_refresh_tokens_access_token_id_index",
+              "schemaName": "public",
+              "tableName": "access_token",
+              "tablespace": "A String",
+              "unique": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

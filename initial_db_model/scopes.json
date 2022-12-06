@@ -1,0 +1,31 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "1",
+        "author": "omar",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "scopes",
+              "columns": [
+                {
+                  "column": {
+                    "name": "identifier",
+                    "type": "varchar(100)",
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+
+                  },
+                  "column": {}
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

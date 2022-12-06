@@ -1,0 +1,87 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "1",
+        "author": "omar",
+        "changes": [
+          {
+            "createTable": {
+              "tableName": "clients",
+              "columns": [
+                {
+                  "column": {
+                    "name": "identifier",
+                    "type": "varchar(100)",
+                    "constraints": {
+                      "primaryKey": true,
+                      "nullable": false
+                    }
+                  },
+                  "column": {
+                    "name": "user_id",
+                    "type": "bigint unsigned",
+                    "constraints": {
+                      "nullable": true
+                    }
+                  },
+                  "column": {
+                    "name": "name",
+                    "type": "varchar(255)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  },
+                  "column": {
+                    "name": "redirect",
+                    "type": "text",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  },
+                  "column": {
+                    "name": "allow_plain_text_pkce",
+                    "type": "tinyint(1)",
+                    "constraints": {
+                      "nullable": false
+                    }
+                  },
+                  "column": {
+                    "name": "isConfidential",
+                    "type": "tinyint(1)",
+                    "constraints": {
+                      "nullable": true
+                    }
+                  },
+                  "column": {
+                    "name": "grants",
+                    "type": "varchar(128)",
+                    "constraints": {
+                      "nullable": true
+                    }
+                  }
+                }
+              ]
+            },
+            "createIndex": {
+              "clustered": true,
+              "columns": [
+                {
+                  "column": {
+                    "descending": true,
+                    "name": "user_id"
+                  }
+                }
+              ],
+              "indexName": "index oauth_clients_user_id_index",
+              "schemaName": "public",
+              "tableName": "clients",
+              "tablespace": "A String",
+              "unique": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "databaseChangeLog": [
+    {
+      "include": {
+        "file": "initial_db_model/access_token.json"
+      }
+    },
+    {
+      "include": {
+        "file": "initial_db_model/authorization_code.json"
+      }
+    },
+    {
+      "include": {
+        "file": "initial_db_model/clients.json"
+      }
+    },
+    {
+      "include": {
+        "file": "initial_db_model/refresh_tokens.json"
+      }
+    },
+    {
+      "include": {
+        "file": "initial_db_model/scopes.json"
+      }
+    },
+    {
+      "include": {
+        "file": "initial_db_model/users.json"
+      }
+    }
+  ]
+}
